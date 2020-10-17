@@ -1,5 +1,5 @@
 # kubernetes
-    [kuberentes docs ](https://kubernetes.io) 
+[kuberentes docs ](https://kubernetes.io) 
 
     Kubernetes is the Greek word for helmsman or pilot/captain of a ship
     Google open-sourced the Kubernetes project in 2014.
