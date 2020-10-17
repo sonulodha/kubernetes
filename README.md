@@ -4,7 +4,7 @@
     Google open-sourced the Kubernetes project in 2014.
     Kubernetes is also referred to as k8s, as there are 8 characters between k and s
     Container management ( orchestration ) tool 
-    Developed by Google lab ( &amp; later donated to CNCF )
+    Developed by Google lab ( and  later donated to CNCF )
     Open source
     Written in Golang 
     
