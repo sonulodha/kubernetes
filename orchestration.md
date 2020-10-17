@@ -30,8 +30,8 @@
    
     docker service ps app
 
+    docker service node ls
 
-# docker service node ls
     scaling and Load balancing
 
     docker service scale app=4
