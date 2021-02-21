@@ -1,0 +1,27 @@
+# pod-defination.yml
+apiVersion: v1  #kubectl explain pod
+kind: Pod
+metadata:
+ name: httpd-pod
+ labels:
+   app: httpd-app
+spec:
+ containers:    #List
+  - name: httpd-container
+    image: httpd
+    ports:
+    - containerPort: 80
+      hostPort: 8080
+
+  - name: mario-container
+    image: kaminskypavel/mario
+    ports:
+    - containerPort: 8080
+      hostPort: 8081
+       
+#kubectl create -f pod-defination.yml       
+#or
+#kubectl apply -f pod-defination.yml       
+#kubectl get pods
+#kubectl describe pod httpd-pod
+#kubectl delete -f pod-defination.yml

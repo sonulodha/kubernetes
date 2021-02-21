@@ -1,0 +1,19 @@
+# pod-defination.yml
+apiVersion: v1  #kubectl explain pod
+kind: Pod
+metadata:
+ name: httpd-pod
+ labels:
+   app: httpd-app
+spec:
+ containers:    #List
+  - name: httpd-container
+    image: httpd
+       
+       
+#kubectl create -f pod-defination.yml       
+#or
+#kubectl apply -f pod-defination.yml       
+#kubectl get pods
+#kubectl describe pod httpd-pod
+#kubectl delete -f pod-defination.yml

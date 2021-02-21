@@ -1,0 +1,86 @@
+#!/bin/bash
+Concpet:
+	Overview - ReplicaSet
+	Labels & Selectors
+	Equality-based and Set-based selectors
+	
+Demo
+	Manifest file - Replicaset
+	Deploy application with ReplicaSet
+	Dispaly and Validate
+	Test Cases
+
+#ReplicaSet
+ReplicaSet and Pods are associated with  "Labels"
+
+
+#ReplicaSet vs REplication Controller
+ReplicaSet is Next-generation Replication Controller
+#ReplicaSet
+	Set-based-Selectors
+#Replication Controller
+	Equality-based Selectors
+	
+
+
+#Labels & Selectors
+
+Pods					Controller and Services
+#Lables				#Selectors
+
+#pod-spec
+apiVersion: v1
+kind: Pod
+metadata:
+ name: httpd-pod
+ labels:			;
+   app: app-agent		;
+   tier: frontend		;
+   env: pro			;
+spec:
+ replicas: 5			;   
+ 
+ 
+----------------------------------------------------------------------------------------------
+equality-based and set based 
+ 
+#Equality-based
+ 	#operators:
+ 		=	==	!=
+ 	#Examples:
+ 		environment = production
+		tier:	frontend
+	#Command-Line
+	 		#kubectl get pods -l environment=production	
+	#In manifest File
+			---
+			selector:
+			 environment: production
+			 tier: frontend 		
+
+
+	#supports:
+		Job, Deployment, Replicas Set and Daemon Set
+		
+
+
+ #Set-based			
+ 	#Operators:
+ 		in notin	exists
+ 	#Examples:
+ 		environment in ( production,qa,test)	
+ 		tier: notin (frontend,monitoring)
+ 		
+ 	#Command Line
+	 		#kubectl get pods -l environment in (production)
+	#In manifest File
+	
+		 	---
+		 	selector:
+		 	matchExpressions:
+		 	 - {key: environment,operator: in,values:[prod,monitoring]}
+		 	 - {key: tier,operators: notin, vlaues: [front,backend]}	
+		 	 
+		 	 
+	#supports:
+		Services,replication Controller	 	 
